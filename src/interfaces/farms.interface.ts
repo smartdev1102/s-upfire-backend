@@ -12,4 +12,5 @@ export interface Farm {
   token0: string;
   token1: string;
   chain: number;
+  factory: string;
 }

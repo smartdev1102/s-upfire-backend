@@ -1,4 +1,4 @@
-import { IsDate, IsNumber, IsString } from "class-validator";
+import { IsDate, IsNumber, isString, IsString } from "class-validator";
 
 
 export class CreateFarmDto {
@@ -28,4 +28,6 @@ export class CreateFarmDto {
   public token1: string;
   @IsNumber()
   public chain: number;
+  @IsString()
+  public factory: string;
 }

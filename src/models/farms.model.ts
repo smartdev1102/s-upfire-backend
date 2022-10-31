@@ -39,6 +39,9 @@ const farmSchema: Schema = new Schema({
   chain: {
     type: Number 
   },
+  factory: {
+    type: String
+  }
 });
 
 const farmModel = model<Farm & Document>('Farm', farmSchema);
