@@ -405,5 +405,6 @@ module.exports = {
   pair,
   tokenContract,
   factory,
-  farm
+  farm,
+  swapFactories
 }

@@ -12,9 +12,6 @@ const poolSchema: Schema = new Schema({
   owner: {
     type: String 
   },
-  balance: {
-    type: String
-  },
   rewardToken: {
     type: String 
   },
@@ -23,6 +20,9 @@ const poolSchema: Schema = new Schema({
   },
   chain: {
     type: Number
+  },
+  address: {
+    type: String
   }
 });
 

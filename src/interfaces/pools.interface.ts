@@ -3,8 +3,8 @@ export interface Pool {
   name: string;
   apr: number;
   owner: string;
-  balance: string;
   rewardToken: string;
   stakeToken: string;
   chain: number;
+  address: string;
 }

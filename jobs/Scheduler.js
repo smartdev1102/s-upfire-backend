@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const pairsModel = require("./PairsModel");
 const farmsModel = require("./FarmsModel");
 const ethers = require("ethers");
-const { swapFactory, pair, tokenContract, address, factory, farm } = require("./ethers.util");
+const { swapFactory, pair, tokenContract, address, factory, farm, swapFactories } = require("./ethers.util");
 
 
 mongoose
@@ -14,10 +14,10 @@ mongoose
   .catch(err => {
     console.error(err)
   })
-cron.schedule("0 1 * * *", async () => {
+cron.schedule("* * * * *", async () => {
   console.log("fetch pairs");
   // get pairs on chain 56
-  await getPairs(56, 0);
+  await getPairs(97, 0);
   await getPairs(43114, 0);
   await getPairs(43114, 1);
 });
@@ -37,7 +37,7 @@ async function getPairs(chain, index) {
           symbol1: symbol1,
           symbol2: symbol2,
           chain: chain,
-          factory: address[chain][index]
+          factory: swapFactories[chain][index]['uniswap']
         }
       );
     }
