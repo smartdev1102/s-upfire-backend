@@ -1,8 +1,9 @@
 const cron = require("node-cron");
 const mongoose = require("mongoose");
-const ethers = require("ethers");
 const pairsModel = require("./PairsModel");
-const { swapFactory, pair, tokenContract } = require("./ethers.util");
+const farmsModel = require("./FarmsModel");
+const ethers = require("ethers");
+const { swapFactory, pair, tokenContract, address, factory, farm } = require("./ethers.util");
 
 
 mongoose
@@ -13,17 +14,17 @@ mongoose
   .catch(err => {
     console.error(err)
   })
-cron.schedule("0 */1 * * *", async () => {
+cron.schedule("0 1 * * *", async () => {
   console.log("fetch pairs");
-  // get pairs on chain 97
-  await getPairs(97);
-  await getPairs(43113);
-  await getPairs(4);
+  // get pairs on chain 56
+  await getPairs(56, 0);
+  await getPairs(43114, 0);
+  await getPairs(43114, 1);
 });
 
-async function getPairs(chain) {
+async function getPairs(chain, index) {
   try {
-    const pairsLength = await swapFactory(chain).allPairsLength();
+    const pairsLength = await swapFactory(chain, index).allPairsLength();
     for (let i = 0; i < Number(pairsLength); i++) {
       const pairAddress = await swapFactory(chain).allPairs(i);
       const token0 = await pair(chain, pairAddress).token0();
@@ -35,7 +36,8 @@ async function getPairs(chain) {
           address: pairAddress,
           symbol1: symbol1,
           symbol2: symbol2,
-          chain: chain
+          chain: chain,
+          factory: address[chain][index]
         }
       );
     }
@@ -43,3 +45,4 @@ async function getPairs(chain) {
     console.log(err);
   }
 }
+

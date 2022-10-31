@@ -1,22 +1,49 @@
 const mongoose = require("mongoose")
-const pairsSchema = new mongoose.Schema({
-  address: {
+const farmsSchema = new mongoose.Schema({
+  name: {
     type: String,
   },
-  symbol1: {
+  baseToken: {
     type: String,
   },
-  symbol2: {
+  symbol: {
     type: String,
   },
-  chain: {
+  start: {
+    type: Date
+  },
+  end: {
+    type: Date
+  },
+  numFarners: {
     type: Number
   },
-  factory: {
+  supply: {
     type: String
+  },
+  blockReward: {
+    type: Number
+  },
+  address: {
+    type: String
+  },
+  lptoken: {
+    type: String
+  },
+  rewardToken: {
+    type: String
+  },
+  token0: {
+    type: String
+  },
+  token1: {
+    type: String
+  }, 
+  chain: {
+    type: Number
   }
 })
-class Pairs {
+class Farms {
   static getRec(date) {
     return this.find({
       recordedDate: {
@@ -28,7 +55,9 @@ class Pairs {
     return this.insertMany(data)
   }
   static async insertData(data) {
+    console.log(data);
     const findone = await this.find({chain: data.chain, address: data.address});
+    console.log(findone);
     if(findone.length == 0) {
       this.insertMany([data]);
     }
@@ -53,5 +82,5 @@ class Pairs {
     }).exec()
   }
 }
-pairsSchema.loadClass(Pairs)
-module.exports = mongoose.model("Pairs", pairsSchema)
+farmsSchema.loadClass(Farms)
+module.exports = mongoose.model("Farms", farmsSchema)
