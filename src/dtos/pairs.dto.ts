@@ -9,4 +9,6 @@ export class CreatePairDto {
   public symbol2: string;
   @IsNumber()
   public chain: number;
+  @IsString()
+  public factory: string;
 }

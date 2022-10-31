@@ -4,4 +4,5 @@ export interface Pair {
   symbol1: string;
   symbol2: string;
   chain: number;
+  factory: string;
 }

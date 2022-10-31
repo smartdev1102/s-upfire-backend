@@ -14,6 +14,9 @@ const pairSchema: Schema = new Schema ({
   },
   chain: {
     type: Number
+  },
+  factory: {
+    type: String
   }
 });
 

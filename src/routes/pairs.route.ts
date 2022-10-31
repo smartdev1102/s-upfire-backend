@@ -14,7 +14,7 @@ class PairsRoute implements Routes {
   }
 
   private initializeRoutes() {
-    this.router.get(`${this.path}/:chain`, this.pairsController.getPairsByChain);
+    this.router.get(`${this.path}/:chain/:factory`, this.pairsController.getPairsByChain);
   }
 }
 
