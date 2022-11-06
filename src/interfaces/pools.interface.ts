@@ -7,4 +7,5 @@ export interface Pool {
   stakeToken: string;
   chain: number;
   address: string;
+  // invisible: boolean;
 }

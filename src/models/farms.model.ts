@@ -41,6 +41,12 @@ const farmSchema: Schema = new Schema({
   },
   factory: {
     type: String
+  },
+  invisible: {
+    type: Boolean
+  },
+  owner: {
+    owner: String
   }
 });
 

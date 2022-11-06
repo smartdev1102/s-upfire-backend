@@ -23,6 +23,9 @@ const poolSchema: Schema = new Schema({
   },
   address: {
     type: String
+  },
+  invisible: {
+    type: Boolean
   }
 });
 

@@ -13,4 +13,6 @@ export interface Farm {
   token1: string;
   chain: number;
   factory: string;
+  // invisible: boolean;
+  // owner: string;
 }

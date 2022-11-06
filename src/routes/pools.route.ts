@@ -16,6 +16,7 @@ class PoolsRoute implements Routes {
   private initializeRoutes() {
     this.router.get(`${this.path}/:chain`, this.poolsController.getPools);
     this.router.post(`${this.path}`, this.poolsController.createPool);
+    this.router.put(`${this.path}/invisible`, this.poolsController.visiblePool);
   }
 }
 

@@ -28,7 +28,17 @@ class PoolsController {
     }
   };
 
-  
+  public visiblePool = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const poolId = req.body.id;
+      const flag = req.body.invisible;
+      const updatedPool: Pool = await this.poolService.visiblePool(poolId, flag);
+
+      res.status(201).json({data: updatedPool, message: 'updated'});
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 export default PoolsController;

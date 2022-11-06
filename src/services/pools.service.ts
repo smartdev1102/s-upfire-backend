@@ -18,6 +18,13 @@ class PoolService {
     const createpoolData: Pool = await this.pools.create(poolData);
     return createpoolData;
   }
+
+  public async visiblePool(poolId: string, flag: boolean): Promise<Pool> {
+    const findPool = await this.pools.findById(poolId);
+    if(!findPool) throw new HttpException(400, "Wrong pool");
+    const updatedPool: Pool = await this.pools.findByIdAndUpdate(poolId, { invisible: flag}, {returnOriginal: true});
+    return updatedPool
+  }
 }
 
 export default PoolService;

@@ -28,6 +28,17 @@ class FarmsController {
     }
   };
 
+  public visibleFarm = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const farmId = req.body.id;
+      const flag = req.body.invisible
+      const updatedFarm: Farm = await this.farmService.visibleFarm(farmId, flag);
+
+      res.status(201).json({data: updatedFarm, message: 'updated'});
+    } catch (error) {
+      next(error);
+    }
+  }
   
 }
 

@@ -1,4 +1,4 @@
-import { IsNumber, IsString } from "class-validator";
+import { IsBoolean, IsNumber, IsString } from "class-validator";
 
 
 export class CreatePoolDto {
@@ -16,4 +16,6 @@ export class CreatePoolDto {
   public chain: number;
   @IsString()
   public address: string;
+  @IsBoolean()
+  public invisible: boolean;
 }
