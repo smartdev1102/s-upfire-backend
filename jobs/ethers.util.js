@@ -17,12 +17,12 @@ const address = {
   56: {
     0: {
       factory: '0x63Abf57Bd3773901De3ec9FaF49D824B67d233CC',
-      generator: '0xb463f85621cCAC9f7178eA72CAAA27941849f738'
+      generator: '0x587a39A679994B9E6BA1F6e29Eb0ebA20Df42abF'
     }
   },
   97: {
     0: {
-      factory: "0xDb9ADc1D6ED67B3f599c7706478342bCF2577411",
+      factory: "0xE9f8B70CeE3cb8a22B68766Ba5429B23F2ECF1d9",
       generator: "0xddf3b2233ba2B667c2f68eE9D863Ab288C6838d6",
       rewardToken: "0x2A84A252b129489Bc7834B483a4Ba370cA403F19",
       wether: '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd',
@@ -52,28 +52,24 @@ const coinSymbols = {
 const swapFactories = {
   97: {
     0: {
-      uniswap: "0xc35DADB65012eC5796536bD9864eD8773aBc74C4",
-      router: '0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506'
+      "uniswap": "0xc35DADB65012eC5796536bD9864eD8773aBc74C4",
+      "router": '0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506'
     }
   },
   43114: {
     0: {
-      uniswap: "0xefa94DE7a4656D787667C749f7E1223D71E9FD88",
-      router: '0xE54Ca86531e17Ef3616d22Ca28b0D458b6C89106'
+      "uniswap": "0xefa94DE7a4656D787667C749f7E1223D71E9FD88",
+      "router": '0xE54Ca86531e17Ef3616d22Ca28b0D458b6C89106'
     },
     1: {
-      uniswap: "0x9Ad6C38BE94206cA50bb0d90783181662f0Cfa10",
-      router: '0x60aE616a2155Ee3d9A68541Ba4544862310933d4'
+      "uniswap": "0x9Ad6C38BE94206cA50bb0d90783181662f0Cfa10",
+      "router": '0x60aE616a2155Ee3d9A68541Ba4544862310933d4'
     }
-  },
-  4: {
-    uniswap: "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f",
-    router: '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D'
   },
   56: {
     0: {
-      uniswap: '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73',
-      router: '0x10ED43C718714eb63d5aA57B78B54704E256024E'
+      "uniswap": '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73',
+      "router": '0x10ED43C718714eb63d5aA57B78B54704E256024E'
     }
   }
 }
@@ -113,8 +109,8 @@ const pool = (chain, poolAddress) => {
   return new ethers.Contract(poolAddress, Pool.abi, provider);
 }
 
-const routerWeb3 = (chain, signer) => {
-  const contract = new ethers.Contract(swapFactories[chain]['router'], Router.abi, signer);
+const routerWeb3 = (chain, signer, index) => {
+  const contract = new ethers.Contract(swapFactories[chain][index]['router'], Router.abi, signer);
   return contract;
 }
 

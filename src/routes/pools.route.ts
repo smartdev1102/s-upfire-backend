@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import PoolsController from '@controllers/pools.controller';
+import PoolsController from '@/controllers/pools.controller';
 import { CreatePoolDto } from '@dtos/pools.dto';
 import { Routes } from '@interfaces/routes.interface';
 import validationMiddleware from '@middlewares/validation.middleware';
@@ -15,7 +15,7 @@ class PoolsRoute implements Routes {
 
   private initializeRoutes() {
     this.router.get(`${this.path}/:chain`, this.poolsController.getPools);
-    this.router.post(`${this.path}/:chain`, this.poolsController.createPool);
+    this.router.post(`${this.path}`, this.poolsController.createPool);
   }
 }
 

@@ -26,7 +26,7 @@ async function getPairs(chain, index) {
   try {
     const pairsLength = await swapFactory(chain, index).allPairsLength();
     for (let i = 0; i < Number(pairsLength); i++) {
-      const pairAddress = await swapFactory(chain).allPairs(i);
+      const pairAddress = await swapFactory(chain, index).allPairs(i);
       const token0 = await pair(chain, pairAddress).token0();
       const token1 = await pair(chain, pairAddress).token1();
       const symbol1 = await tokenContract(chain, token0).symbol();

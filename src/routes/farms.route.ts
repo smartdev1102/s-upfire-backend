@@ -15,7 +15,7 @@ class FarmsRoute implements Routes {
 
   private initializeRoutes() {
     this.router.get(`${this.path}/:chain`, this.farmsController.getFarms);
-    this.router.post(`${this.path}/:chain`, this.farmsController.createFarm);
+    this.router.post(`${this.path}`, this.farmsController.createFarm);
   }
 }
 
