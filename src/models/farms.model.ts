@@ -46,7 +46,7 @@ const farmSchema: Schema = new Schema({
     type: Boolean
   },
   owner: {
-    owner: String
+    type: String
   }
 });
 
