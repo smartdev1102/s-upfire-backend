@@ -24,6 +24,15 @@ const poolSchema: Schema = new Schema({
   address: {
     type: String
   },
+  start: {
+    type: Date
+  },
+  end: {
+    type: Date
+  },
+  rewardSymbol: {
+    type: String
+  },
   invisible: {
     type: Boolean
   }

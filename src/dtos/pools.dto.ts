@@ -16,6 +16,12 @@ export class CreatePoolDto {
   public chain: number;
   @IsString()
   public address: string;
+  @IsDate()
+  public start: Date;
+  @IsDate()
+  public end: Date;
+  @IsString()
+  public rewardSymbol: string;
   @IsBoolean()
   public invisible: boolean;
 }
