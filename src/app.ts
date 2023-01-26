@@ -5,7 +5,7 @@ import express from 'express';
 import helmet from 'helmet';
 import hpp from 'hpp';
 import morgan from 'morgan';
-import { connect, set } from 'mongoose';
+import { connect, set, ConnectOptions } from 'mongoose';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 import { NODE_ENV, PORT, LOG_FORMAT, ORIGIN, CREDENTIALS } from '@config';
@@ -49,7 +49,7 @@ class App {
       set('debug', true);
     }
 
-    connect(dbConnection.url, dbConnection.options);
+    connect(dbConnection.url);
   }
 
   private initializeMiddlewares() {

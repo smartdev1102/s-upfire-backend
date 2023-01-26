@@ -16,31 +16,45 @@ const SPool = require('./contracts/Pool.sol/Pool.json');
 const address = {
   56: {
     0: {
-      factory: '0x63Abf57Bd3773901De3ec9FaF49D824B67d233CC',
-      generator: '0x587a39A679994B9E6BA1F6e29Eb0ebA20Df42abF'
-    }
+      factory: "0xF854E75B77d92d11579442cd9c36980Ed39fe68d",
+      generator: "0x9C2D0018986FEd97c5EFE7569020ea4108646740",
+      wether: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+      sfactory: "0x1a43abdbb2BDfC5ef3C5B9a92fFed566630C0a7D",
+      sgenerator: "0xc00ee850efA214742b548626c0Bc56FFebCa0032",
+    },
   },
   97: {
     0: {
-      factory: "0xE9f8B70CeE3cb8a22B68766Ba5429B23F2ECF1d9",
-      generator: "0xddf3b2233ba2B667c2f68eE9D863Ab288C6838d6",
-      rewardToken: "0x2A84A252b129489Bc7834B483a4Ba370cA403F19",
-      wether: '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd',
-      sfactory: '0x336227924a7187411E64BDA693AE266C5be1C99d',
-      sgenerator: '0x719475e78A5C0661198E673c517cEDe900a5E7b9'
-    } 
+      factory: "0x5CD5a6dCf173a4e44CC62dB621C957c4B133E270",
+      generator: "0x747e47410DA188885E4717202786490122b9475b",
+      rewardToken: "0x75D8D5989fd5df9358adeadDeEC21d04227c2cAA",
+      wether: "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd",
+      sfactory: "0xF1F6771637AF1196F1dDC35C4004D13724858E82",
+      sgenerator: "0x5fb78273134a202C9Cf048dFBc8785A5c2B611c1",
+    },
   },
   43114: {
     0: {
-      factory: '0xafdC15eD96544f4Dc7bB3997f723A3F333eEE994',
-      generator: '0xfeaB072417019a9b2Dc1c6940c31845354a3d0E7'
+      factory: "0xafdC15eD96544f4Dc7bB3997f723A3F333eEE994",
+      generator: "0xfeaB072417019a9b2Dc1c6940c31845354a3d0E7",
+      wether: "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+      sfactory: "0x5997c902700D4a35456ee6BEC69699E2F57486F1",
+      sgenerator: "0xAa33efd126a446a1F518880bBEA0Ce3a740f5C39",
     },
     1: {
-      factory: '0x0100e4D763bA57C0DCAa5E3D4cBb5A51f65e2846',
-      generator: '0x3fa9b82Dd7db611242b6B0C67EaC1bb580F2259e'
-    }
-  }
-}
+      factory: "0x0100e4D763bA57C0DCAa5E3D4cBb5A51f65e2846",
+      generator: "0x3fa9b82Dd7db611242b6B0C67EaC1bb580F2259e",
+    },
+  },
+  4: {
+    factory: "0x587a39A679994B9E6BA1F6e29Eb0ebA20Df42abF",
+    generator: "0x40275f985d891cd73E5b594faaEb01f99142F46C",
+    rewardToken: "0xBd83855cfADe70EDA1f93080c32387d93Dc39BE1",
+    sfactory: "0x36f708Cd37f35e9517Be6F1F6D0f3b52b9898799",
+    sgenerator: "0x1e10444e7280f1f1A353c5436cfEc2CB27c63F66",
+    wether: "0xc778417E063141139Fce010982780140Aa0cD5Ab",
+  },
+};
 
 const coinSymbols = {
   97: 'BNB',
