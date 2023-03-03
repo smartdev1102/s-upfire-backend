@@ -30,6 +30,9 @@ const farmSchema: Schema = new Schema({
   lptoken: {
     type: String 
   },
+  rewardToken: {
+    type: String 
+  },
   token0: {
     type: String 
   },
