@@ -18,6 +18,12 @@ const poolSchema: Schema = new Schema({
   stakeToken: {
     type: String
   },
+  rewardPerBlock: {
+    type: Number
+  },
+  supply: {
+    type: Number
+  },
   chain: {
     type: Number
   },
