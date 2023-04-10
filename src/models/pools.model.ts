@@ -39,6 +39,21 @@ const poolSchema: Schema = new Schema({
   rewardSymbol: {
     type: String
   },
+  multiplier: {
+    type: Number
+  },
+  bonusPeriod: {
+    type: Number
+  },
+  lockPeriod: {
+    type: Number
+  },
+  isBonus: {
+    type: Boolean
+  },
+  isLock: {
+    type: Boolean
+  },
   invisible: {
     type: Boolean
   }
